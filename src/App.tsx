@@ -13,7 +13,7 @@ function TagList({ title, tags }) {
         {tags.map((tag) => (
           <Badge
             key={tag}
-            className="bg-gray-800 text-white hover:bg-gray-700 cursor-pointer"
+            className="bg-badge-background text-white hover:bg-gray-700 cursor-pointer h-8 px-4"
           >
             {tag}
           </Badge>
@@ -60,16 +60,16 @@ function BoxArea108({
   }, [initialValue]);
 
   return (
-    <div className="flex items-center bg-black px-4 py-2 rounded-full w-full max-w-xl mt-6 shadow-lg">
+    <div className="bg-background flex items-center px-4 py-2 rounded-md w-full max-w-xl h-16 mt-6 shadow-lg">
       <Search className="text-gray-400 mr-3" />
       <Input
         value={innerValue}
         onChange={(e) => setInnerValue(e.target.value)}
         type="text"
         placeholder="Type to search..."
-        className="flex-1 bg-transparent border-none text-white placeholder:text-gray-400 focus:ring-0"
+        className="flex-1 dark:bg-background border-none text-white focus:ring-0"
       />
-      <Button className="bg-blue-600 hover:bg-blue-700 text-white ml-4">
+      <Button className="bg-[#1A80E5] hover:bg-blue-700 text-white ml-4">
         Search
       </Button>
     </div>
@@ -78,14 +78,14 @@ function BoxArea108({
 
 function Header() {
   return (
-    <header className="flex items-center justify-between px-6 py-4 bg-black border-b border-gray-800">
-      <div className="flex items-center gap-2">
-        <img src="/task1/logo.png" alt="Logo" className="w-10 h-10" />
-        <div className="text-white font-semibold text-lg">Wortionary</div>
+    <header className="dark flex items-center justify-between pl-10 pr-10 py-3 bg-background border-b-2 border-gray-800">
+      <div className="flex items-center gap-8">
+        <img src="/task1/logo.png" alt="Logo" className="w-4 h-4" />
+        <div className="text-white font-semibold text-lg">Worctionary</div>
       </div>
 
-      <div className="flex items-center gap-4">
-        <div style={{ position: "relative" }}>
+      <div className="flex items-center gap-8">
+        <div className="relative">
           <span>
             <span>
               <span className="absolute left-3 top-2.5">
@@ -95,11 +95,11 @@ function Header() {
           </span>
           <Input
             type="text"
-            value="search"
-            className="pl-9 bg-gray-800 text-white border-none focus:ring-0 rounded-full"
+            placeholder="Search"
+            className="pl-10 bg-gray-800 text-white border-none focus:ring-0 rounded-md h-10 w-40"
           />
         </div>
-        <Avatar style={{ width: "32px", height: "32px" }}>
+        <Avatar className="w-10 h-10">
           <AvatarImage src="/avatar.jpg" />
           <AvatarFallback>U</AvatarFallback>
         </Avatar>
@@ -119,7 +119,7 @@ export default function App() {
   ]);
 
   return (
-    <main className="bg-black min-h-screen text-white">
+    <main className="dark bg-background min-h-screen text-white">
       <Header />
       <BoxArea97 />
       <TagList title="Trending" tags={tags} />
