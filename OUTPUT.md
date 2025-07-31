@@ -1,45 +1,142 @@
-[Example output - you should start from scratch]
 
 ## Changes Made
 
+### General Description of Changes
+
+-   Improved code organization and modularity
+-   Enhanced accessibility and SEO score
+-   Fixed styling issues and inconsistencies
+-   Improved code readability and maintainability
+
 ### [Page Title]
 
-1. index.html file in line 5 is pointing to Vite's favicon.
-   - Issue: Page title is using the wrong favicon.
-   - Fix: Use the logo provided in the public folder.
-2. index.html line 7 has a typo.
-   - Issue: Page title says 'Wortionary'.
-   - Fix: Add the missing 'c' to 'Worctionary'.
+1.  **Incorrect Favicon**
+    -   Issue: Wrong favicon used
+    -   Fix: Use logo provided in public folder
+2.  **Typo in Page Title**
+    -   Issue: Page title says 'Wortionary'
+    -   Fix: Add missing 'c' to 'Worctionary'
+
+### [App Component]
+
+1.  **Incorrect Background Color**
+    -   Issue: Background color not matching Figma design
+    -   Fix: Adjusted Tailwind class names and added correct color to index.css
+2.  **Tightly Coupled Data**
+    -   Issue: Data defined within App component
+    -   Fix: Implemented placeholder function to simulate API call and moved to dedicated api folder
+3.  **Incorrect Data Fetch**
+    -   Issue: Data fetch not performed in TagList component
+    -   Fix: Moved logic to TagList component to fetch data
 
 ### [Header Component]
 
-1. App.tsx line 84 has a typo.
-   - Issue: Header text says 'Wortionary'.
-   - Fix: Add the missing 'c' to 'Worctionary'.
-2. App.tsx line 81 is setting the wrong background color.
-   - Issue: The header's background color was not the one in the Figma design.
-   - Fix: Adjusted index.css to use the correct one.
-3. App.tsx line 81 styles have the wrong padding.
-   - Issue: The header's left and right padding are different to the ones in the Figma design.
-   - Fix: Changed the class names to match the right spacing.
-4. App.tsx line 83 styles have the wrong sizing for the logo.
-   - Issue: Logo in the heather is bigger than the design provided in Figma.
-   - Fix: Changed the class names to match the right size.
-5. App.tsx lines 82 and 87 styles have the wrong spacing.
-   - Issue: Gap between logo and title and gap between search box and user profile picture are smaller than the ones in the design.
-   - Fix: Adjusted Tailwind class names to add more space between elements accordingly.
-6. App.tsx lines 88 and 102 contain styles properties instead of Tailwind class names.
-   - Issue: Style properties diverge from the framework used for styling.
-   - Fix: Change the style properties for Tailwind class names.
-7. App.tsx line 98 is using the value attribute as a placeholder.
-   - Issue: Placeholder text should be set using the placeholder attribute.
-   - Fix: Set the word 'Search' to the placeholder attribute.
-8. App.tsx lines 98, 99 and 102 have styling isues.
-   - Issue: The styles do not match the Figma design.
-   - Fix: Adjusted Tailwind's class names so the styles match the Figma design.
+1.  **Typo in Header Text**
+    -   Issue: Header text says 'Wortionary'
+    -   Fix: Add missing 'c' to 'Worctionary'
+2.  **Incorrect Background Color**
+    -   Issue: Background color not matching Figma design
+    -   Fix: Adjusted index.css to use correct color
+3.  **Incorrect Padding**
+    -   Issue: Padding not matching Figma design
+    -   Fix: Changed class names to match correct spacing
+4.  **Incorrect Logo Sizing**
+    -   Issue: Logo size not matching Figma design
+    -   Fix: Changed class names to match correct size
+5.  **Incorrect Spacing**
+    -   Issue: Spacing not matching Figma design
+    -   Fix: Adjusted Tailwind class names to add correct space between elements
+6.  **Style Properties Instead of Tailwind Class Names**
+    -   Issue: Style properties used instead of Tailwind class names
+    -   Fix: Changed style properties to Tailwind class names
+7.  **Incorrect Placeholder Text**
+    -   Issue: Placeholder text not set correctly
+    -   Fix: Set placeholder text to 'Search'
+8.  **Styling Issues**
+    -   Issue: Styles not matching Figma design
+    -   Fix: Adjusted Tailwind class names to match Figma design
+9.  **Semantic Tag Issue**
+    -   Issue: Div tag used instead of semantic tag
+    -   Fix: Changed div tag to h1 tag
+10.  **Redundant Tags**
+    -   Issue: Redundant tags increasing rendering time and cognitive complexity
+    -   Fix: Removed redundant tags
+11.  **Alt Attribute Description**
+    -   Issue: Alt attribute description not descriptive
+    -   Fix: Added more context to alt attribute description
+12.  **Search Icon Accessibility**
+    -   Issue: Search icon not accessible to screen readers
+    -   Fix: Added aria label to provide description
+13.  **Search Input Accessibility**
+    -   Issue: Search input not descriptive enough
+    -   Fix: Added aria label, role attributes, and changed type to provide better description
+14.  **Component Modularity**
+    -   Issue: Component not self-contained
+    -   Fix: Moved component to independent file in UI components folder
+15.  **Customizable Styles**
+    -   Issue: No way to customize component styles
+    -   Fix: Added optional className param to provide way to customize styles
 
-### [Main Section]
+### [Search Box Area]
 
-1. App.tsx in line 122 is referencing a wrong background color.
-   - Issue: The background color in the main section is not the one used in the Figma design.
-   - Fix: Adjusted Tailwind's class names and added the right color to index.css so the styles match the Figma design.
+1.  **Styling Issues**
+    -   Issue: Styles not matching Figma design
+    -   Fix: Adjusted Tailwind class names to match Figma design
+2.  **Component Name**
+    -   Issue: Component name not descriptive
+    -   Fix: Changed component name to describe section's main purpose
+3.  **Customizable Styles**
+    -   Issue: No way to customize component styles
+    -   Fix: Added optional className param to provide way to customize styles
+4.  **Background Image Alt Attribute**
+    -   Issue: Background image missing alt attribute
+    -   Fix: Added descriptive text to alt attribute
+5.  **Search Functionality**
+    -   Issue: Search function performs action on first stroke
+    -   Fix: Added validation to return if search term has less than 3 characters
+
+### [Search Box Component]
+
+1.  **Component Name**
+    -   Issue: Component name not descriptive
+    -   Fix: Changed component name to align with functionality
+2.  **Input Label**
+    -   Issue: Input missing label
+    -   Fix: Added aria-label to describe input purpose
+3.  **Component Modularity**
+    -   Issue: Component not self-contained
+    -   Fix: Moved component to independent file in UI components folder
+4.  **Customizable Styles**
+    -   Issue: No way to customize component styles
+    -   Fix: Added optional className param to provide way to customize styles
+5.  **Input Type**
+    -   Issue: The Input has a mismatching type
+    -   Fix: Changed the input type attribute from text to search
+
+### [Tag List Component]
+
+1.  **Badge Styling Issues**
+    -   Issue: Badges had incorrect background color and sizing
+    -   Fix: Adjusted Tailwind class names and added correct color to index.css
+2.  **Semantic Tag Issue**
+    -   Issue: Div tag used instead of semantic tag for a title
+    -   Fix: Changed div tag to h1 tag
+3.  **Component Modularity**
+    -   Issue: Component not self-contained
+    -   Fix: Moved component to independent file in UI components folder
+4.  **Untyped Parameters**
+    -   Issue: Parameters not typed
+    -   Fix: Typed parameters to let TS know what to expect
+5.  **Non-Unique Key Property**
+    -   Issue: Key property not unique
+    -   Fix: Used combination of tag and index to generate unique identifier
+6.  **Customizable Styles**
+    -   Issue: No way to customize component styles
+    -   Fix: Added optional className param to provide way to customize styles
+7.  **Stateless Component**
+    -   Issue: Component was receiving props from parent
+    -   Fix: Fetched data directly from component and handled in local state
+
+### TODO
+
+-   Adjust sidebar for mobile view: This task involves adapting the sidebar design and functionality to ensure a seamless user experience on smaller screens.
