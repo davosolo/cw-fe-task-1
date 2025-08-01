@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import { fetchTags } from "@/api/tags";
 
 type TagListProps = {
-  className?: string;
-  title: string;
+  className?: string,
+  title: string
 };
 
 function TagList({ className, title }: TagListProps) {

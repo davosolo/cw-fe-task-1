@@ -5,8 +5,8 @@ import { cn } from "@/lib/utils";
 import { useSidebar, SidebarTrigger } from "@/components/ui/sidebar";
 
 type HeaderProps = {
-  className?: string;
-  title: string;
+  className?: string,
+  title: string
 };
 
 function Header({ className, title }: HeaderProps) {
